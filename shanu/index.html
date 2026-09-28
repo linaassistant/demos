@@ -134,9 +134,6 @@ button:hover{animation:none;transform:translateY(-2px)}
 .hero .banner{display:none}
 .hero .veil{display:none}
 .hero .blob{display:none}
-/* preview watermark overlay (anti-screenshot deterrent) */
-.preview-wm{position:fixed;inset:0;z-index:9998;pointer-events:none;background:url(banner/wm-tile.png) repeat;opacity:.9}
-@media print{.preview-wm{display:none}}
 /* top patti — sirf strip, koi text nahi */
 .ticker.vbar{padding:0;height:9px;background-size:200% 100%;overflow:hidden}
 /* top-of-page banner + slideshow (moved above the hero text) */
@@ -503,6 +500,5 @@ if(fix){fix.style.opacity=0;addEventListener('scroll',()=>{fix.style.opacity=scr
   } catch(e) {}
 })();
 </script>
-<div class="preview-wm" aria-hidden="true"></div>
 </body>
 </html>
