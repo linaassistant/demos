@@ -50,7 +50,7 @@ button{background:#242c3d;color:#e9eefc;border:0;border-radius:10px;padding:.5re
   </div>
 </div>
 <script>
-var NS="shanu-prev-v1";
+var NS="shanu-go1";
 var KEYS=["opens-other","opens-me","new-visitors","repeat-opens","seconds","ref-whatsapp","ref-telegram","ref-other"];
 function get(k){return fetch("https://abacus.jasoncameron.dev/get/"+NS+"/"+k,{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){return (d&&typeof d.value==="number")?d.value:0}).catch(function(){return 0});}
 function load(){
