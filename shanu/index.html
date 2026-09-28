@@ -134,14 +134,6 @@ button:hover{animation:none;transform:translateY(-2px)}
 .hero .banner{display:none}
 .hero .veil{display:none}
 .hero .blob{display:none}
-/* hero badge -> flashing services */
-.tag.flash-tag{position:relative;display:flex;align-items:center;justify-content:flex-start;width:100%;min-width:0;box-sizing:border-box;height:2.3rem;padding:0 1.05rem;border-radius:12px;overflow:hidden}
-.ftag-item{position:absolute;left:1rem;right:1rem;text-align:left;opacity:0;transform:translateY(58%) scale(.97);transform-origin:left center;transition:opacity .34s ease,transform .34s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;will-change:transform,opacity}
-.ftag-item.on{opacity:1;transform:translateY(0) scale(1);animation:badgeIn .62s cubic-bezier(.16,.84,.28,1)}
-@keyframes badgeIn{0%{opacity:0;transform:translateY(68%) scale(.96);filter:blur(5px)}
-55%{opacity:1;filter:blur(0)}
-100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
-@media (prefers-reduced-motion:reduce){.ftag-item.on{animation:none}}
 /* top patti — sirf strip, koi text nahi */
 .ticker.vbar{padding:0;height:9px;background-size:200% 100%;overflow:hidden}
 /* top-of-page banner + slideshow (moved above the hero text) */
@@ -256,13 +248,7 @@ footer a{color:var(--magenta)}
   <span class="petal p4"></span><span class="petal p5"></span><span class="petal p6"></span>
   <div class="wrap grid">
     <div>
-      <span class="tag flash-tag" aria-live="polite">
-        <span class="ftag-item on">Threading from $8</span>
-        <span class="ftag-item">Full Body Wax $100</span>
-        <span class="ftag-item">Manicure &amp; Pedicure $45</span>
-        <span class="ftag-item">Henna Art $60</span>
-        <span class="ftag-item">249 five-star reviews</span>
-        <span class="ftag-item">Bronx, NY · Walk-ins welcome</span>
+      <span class="tag">✨ Eyebrow threading specialists in the Bronx</span>
       </span>
       <h1>Brows that make people <span class="hl">ask where you got them</span> done.</h1>
       <p class="lead">Threading, waxing, lash extensions and nails — all under one roof. Precise shapes, gentle hands, and prices that make coming back every two weeks easy.</p>
@@ -457,19 +443,6 @@ if(fix){fix.style.opacity=0;addEventListener('scroll',()=>{fix.style.opacity=scr
   box.addEventListener('touchend', start, { passive: true });
   document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
   start();
-})();
-</script>
-<script>
-// Hero badge: services flash (ek waqt me ek)
-(function(){
-  const items = [...document.querySelectorAll('.ftag-item')];
-  if (items.length < 2) return;
-  let i = 0;
-  setInterval(() => {
-    items[i].classList.remove('on');
-    i = (i + 1) % items.length;
-    items[i].classList.add('on');
-  }, 2200);
 })();
 </script>
 
